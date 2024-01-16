@@ -16,7 +16,7 @@ In the Incan religion, Urcuchillay was depicted as a multicolored male llama, wo
 *Note*: In the following examples Urcuchillay AI's [gateway](https://github.com/castellotti/urcuchillay#gateway) service is running on port ```8080```
 ### Docker
 
-Build and run locally:
+#### Build and run locally ####
 ```shell
 docker build -t urcuchillay-chat .
 docker run \
@@ -27,7 +27,7 @@ docker run \
     urcuchillay-chat
 ```
 
-Pull from ghcr:
+#### Pull from ghcr ####
 ```shell
 docker run \
     --add-host=host.docker.internal:host-gateway \

@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
         - name: urcuchillay-chat
-          image: <docker user>/urcuchillay-chat:latest
+          image: castellotti/urcuchillay-chat:latest
           resources: {}
           ports:
             - containerPort: 3000

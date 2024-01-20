@@ -1,5 +1,5 @@
 import { IconExternalLink } from '@tabler/icons-react';
-import { useContext } from 'react';
+import {useContext, useEffect} from 'react';
 
 import { useTranslation } from 'next-i18next';
 
@@ -25,6 +25,22 @@ export const ModelSelect = () => {
         ) as OpenAIModel,
       });
   };
+
+  useEffect(() => {
+    const matchingModel = models.find(
+        (model) => model.id === selectedConversation?.model?.id
+    );
+
+    // If the model assigned to the current conversation is not found in the
+    // models listed as available by the API, set the current conversation model
+    // to use the first model is which found in the API list
+    if (!matchingModel && selectedConversation) {
+      handleUpdateConversation(selectedConversation, {
+        key: 'model',
+        value: models.find((model) => model.id),
+      });
+    }
+  }, [selectedConversation, defaultModelId, handleChange]);
 
   return (
     <div className="flex flex-col">

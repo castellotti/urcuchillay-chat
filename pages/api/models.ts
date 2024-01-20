@@ -1,4 +1,4 @@
-import { OPENAI_API_HOST, OPENAI_API_TYPE, OPENAI_API_VERSION, OPENAI_ORGANIZATION } from '@/utils/app/const';
+import { API_HOST, OPENAI_API_TYPE, OPENAI_API_VERSION, OPENAI_ORGANIZATION } from '@/utils/app/const';
 
 import { OpenAIModel, OpenAIModelID, OpenAIModels } from '@/types/openai';
 
@@ -12,9 +12,9 @@ const handler = async (req: Request): Promise<Response> => {
       key: string;
     };
 
-    let url = `${OPENAI_API_HOST}/v1/models`;
+    let url = `${API_HOST}/v1/models`;
     if (OPENAI_API_TYPE === 'azure') {
-      url = `${OPENAI_API_HOST}/openai/deployments?api-version=${OPENAI_API_VERSION}`;
+      url = `${API_HOST}/openai/deployments?api-version=${OPENAI_API_VERSION}`;
     }
 
     const response = await fetch(url, {
@@ -55,6 +55,13 @@ const handler = async (req: Request): Promise<Response> => {
           if (value === model_name) {
             return {
               id: model.id,
+              name: OpenAIModels[value].name,
+            };
+          } else if (model_name.startsWith(value)) {
+            // Different quantization settings and file formats may be supplied by the API
+            // Handle if a complete filename is sent which starts with a known model id
+            return {
+              id: value,
               name: OpenAIModels[value].name,
             };
           }

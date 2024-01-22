@@ -4,9 +4,9 @@
 
 ## Your friendly, local AI chat interface
 
-Urcuchillay Chat is a web-based chat interface for [Urcuchillay AI](http://urcuchillay.ai) in the style of OpenAI's ChatGPT, based on [Chatbot UI](https://github.com/mckaywrigley/chatbot-ui).
-
 ![User Interface](docs/images/urcuchillay-chatbot_ui.png)
+
+Urcuchillay Chat is a web-based chat interface for [Urcuchillay AI](http://urcuchillay.ai) in the style of OpenAI's ChatGPT, based on [Chatbot UI](https://github.com/mckaywrigley/chatbot-ui).
 
 <div style="text-align:center;">
   <img src="docs/images/urcuchillay-header.webp" alt="Urcuchillay" width="480"/>

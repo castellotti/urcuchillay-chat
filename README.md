@@ -15,8 +15,18 @@ Urcuchillay Chat is a web-based chat interface for [Urcuchillay AI](http://urcuc
 In the Incan religion, Urcuchillay was depicted as a multicolored male llama, worshipped by Incan herders for his role in protecting and increasing the size of their herds.
 
 ## Quickstart Guide
-*Note*: In the following examples Urcuchillay AI's [gateway](https://github.com/castellotti/urcuchillay#gateway) service is running on port ```8080```
+*Note*: In the following examples Urcuchillay AI's [gateway](https://github.com/castellotti/urcuchillay#gateway) service or another OpenAI API-compatible service (such as [Llama.cpp](https://github.com/ggerganov/llama.cpp)) is running on port ```8080```
 ### Docker
+
+#### Pull from GitHub Container Registry ####
+```shell
+docker run \
+    --add-host=host.docker.internal:host-gateway \
+    -e OPENAI_API_HOST=http://host.docker.internal:8080 \
+    -e OPENAI_API_KEY=xxxxxxxx \
+    -p 3000:3000 \
+    ghcr.io/castellotti/urcuchillay-chat:main
+```
 
 #### Build and run locally ####
 ```shell
@@ -27,16 +37,6 @@ docker run \
     -e OPENAI_API_KEY=xxxxxxxx \
     -p 3000:3000 \
     urcuchillay-chat
-```
-
-#### Pull from ghcr ####
-```shell
-docker run \
-    --add-host=host.docker.internal:host-gateway \
-    -e OPENAI_API_HOST=http://host.docker.internal:8080 \
-    -e OPENAI_API_KEY=xxxxxxxx \
-    -p 3000:3000 \
-    ghcr.io/castellotti/urcuchillay-chat:main
 ```
 
 ### Local

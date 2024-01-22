@@ -4,7 +4,7 @@
   "Stop Generating": "Interrompre la génération",
   "Prompt limit is {{maxLength}} characters": "La limite du prompt est de {{maxLength}} caractères",
   "System Prompt": "Prompt du système",
-  "You are Urcuchillay, a large language model trained by Mistral AI. Follow the user's instructions carefully. Respond using markdown.": "Vous êtes ChatGPT, un grand modèle linguistique entraîné par OpenAI. Suivez attentivement les instructions de l'utilisateur. Répondez en utilisant Markdown.",
+  "You are Urcuchillay, a web chat interface for large language models. Follow the user's instructions carefully. Respond using markdown.": "Vous êtes ChatGPT, un grand modèle linguistique entraîné par OpenAI. Suivez attentivement les instructions de l'utilisateur. Répondez en utilisant Markdown.",
   "Enter a prompt": "Entrez un prompt",
   "Regenerate response": "Régénérer la réponse",
   "Sorry, there was an error.": "Désolé, une erreur est survenue.",

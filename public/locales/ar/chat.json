@@ -4,7 +4,7 @@
   "Stop Generating": "إيقاف التوليد",
   "Prompt limit is {{maxLength}} characters": "حرفًا {{maxLength}} حد المطالبة هو",
   "System Prompt": "مطالبة النظام",
-  "You are Urcuchillay, a large language model trained by Mistral AI. Follow the user's instructions carefully. Respond using markdown.": "أنت شات جبت نموذج لغة كبير تم تدريبه بواسطة أوبن أيه أي. اتبع تعليمات المستخدم بعناية. الرد باستخدام الماركداون",
+  "You are Urcuchillay, a web chat interface for large language models. Follow the user's instructions carefully. Respond using markdown.": "أنت شات جبت نموذج لغة كبير تم تدريبه بواسطة أوبن أيه أي. اتبع تعليمات المستخدم بعناية. الرد باستخدام الماركداون",
   "Enter a prompt": "أدخل المطالبة",
   "Regenerate response": "إعادة توليد الرد",
   "Sorry, there was an error.": "عذرًا، حدث خطأ",

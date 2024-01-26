@@ -12,7 +12,6 @@ const handler = async (req: Request): Promise<Response> => {
 
         let apiKey = key === null ? OPENAI_API_KEY : key;
         let url = `${API_HOST}/v0/gateway/reset`;
-        console.log(`storage: GET: ${url}`);
 
         const response = await fetch(url, {
             headers: {

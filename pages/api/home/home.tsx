@@ -8,8 +8,8 @@ import Head from 'next/head';
 
 import { useCreateReducer } from '@/hooks/useCreateReducer';
 
-import useErrorService from '@/services/errorService';
-import useApiService from '@/services/useApiService';
+import useErrorModelsService from '@/services/errorModelsService';
+import useApiModelsService from '@/services/useApiModelsService';
 
 import {
   cleanConversationHistory,
@@ -53,8 +53,8 @@ const Home = ({
   defaultModelId,
 }: Props) => {
   const { t } = useTranslation('chat');
-  const { getModels } = useApiService();
-  const { getModelsError } = useErrorService();
+  const { getModels } = useApiModelsService();
+  const { getModelsError } = useErrorModelsService();
   const [initialRender, setInitialRender] = useState<boolean>(true);
 
   const contextValue = useCreateReducer<HomeInitialState>({
@@ -263,7 +263,6 @@ const Home = ({
 
     if (serverSideApiKeyIsSet) {
       dispatch({ field: 'apiKey', value: '' });
-
       localStorage.removeItem('apiKey');
     } else if (apiKey) {
       dispatch({ field: 'apiKey', value: apiKey });

@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 
 import { ErrorMessage } from '@/types/error';
 
-const useErrorService = () => {
+const useErrorModelsService = () => {
   const { t } = useTranslation('chat');
 
   return {
@@ -32,4 +32,4 @@ const useErrorService = () => {
   };
 };
 
-export default useErrorService;
+export default useErrorModelsService;

@@ -6,7 +6,7 @@ export interface GetModelsRequestProps {
   key: string;
 }
 
-const useApiService = () => {
+const useApiModelsService = () => {
   const fetchService = useFetch();
 
   const getModels = useCallback(
@@ -27,4 +27,4 @@ const useApiService = () => {
   };
 };
 
-export default useApiService;
+export default useApiModelsService;

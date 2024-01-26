@@ -101,10 +101,9 @@ export const Chatbar = () => {
   const handleResetContext = async () => {
     try {
       let key = localStorage.getItem('apiKey');
-      const response = await getReset({ key });
-      console.log(`Chatbar: response: ${response}`);
+      await getReset({ key });
     } catch (error) {
-      console.error('Chatbar: Error:', error);
+      console.error('Error:', error);
     }
   };
 

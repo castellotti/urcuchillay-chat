@@ -14,6 +14,8 @@ import { LatestExportFormat, SupportedExportFormats } from '@/types/export';
 import { OpenAIModels } from '@/types/openai';
 import { PluginKey } from '@/types/plugin';
 
+import useApiResetService from "@/services/useApiResetService";
+
 import HomeContext from '@/pages/api/home/home.context';
 
 import { ChatFolders } from './components/ChatFolders';
@@ -92,6 +94,18 @@ export const Chatbar = () => {
     homeDispatch({ field: 'pluginKeys', value: updatedPluginKeys });
 
     localStorage.setItem('pluginKeys', JSON.stringify(updatedPluginKeys));
+  };
+
+  const { getReset } = useApiResetService();
+
+  const handleResetContext = async () => {
+    try {
+      let key = localStorage.getItem('apiKey');
+      const response = await getReset({ key });
+      console.log(`Chatbar: response: ${response}`);
+    } catch (error) {
+      console.error('Chatbar: Error:', error);
+    }
   };
 
   const handleExportData = () => {
@@ -212,6 +226,7 @@ export const Chatbar = () => {
         ...chatBarContextValue,
         handleDeleteConversation,
         handleClearConversations,
+        handleResetContext,
         handleImportConversations,
         handleExportData,
         handlePluginKeyChange,

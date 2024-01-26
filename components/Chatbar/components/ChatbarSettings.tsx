@@ -1,4 +1,4 @@
-import { IconFileExport, IconSettings } from '@tabler/icons-react';
+import {IconFileExport, IconReload, IconSettings} from '@tabler/icons-react';
 import { useContext, useState } from 'react';
 
 import { useTranslation } from 'next-i18next';
@@ -30,6 +30,7 @@ export const ChatbarSettings = () => {
   } = useContext(HomeContext);
 
   const {
+    handleResetContext,
     handleClearConversations,
     handleImportConversations,
     handleExportData,
@@ -38,6 +39,12 @@ export const ChatbarSettings = () => {
 
   return (
     <div className="flex flex-col items-center space-y-1 border-t border-white/20 pt-1 text-sm">
+      <SidebarButton
+        text={t('Reset Context')}
+        icon={<IconReload size={18} />}
+        onClick={handleResetContext}
+      />
+
       {conversations.length > 0 ? (
         <ClearConversations onClearConversations={handleClearConversations} />
       ) : null}

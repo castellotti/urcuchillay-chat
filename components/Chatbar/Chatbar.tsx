@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect } from 'react';
+import {useCallback, useContext, useEffect} from 'react';
 
 import { useTranslation } from 'next-i18next';
 
@@ -101,7 +101,19 @@ export const Chatbar = () => {
   const handleResetContext = async () => {
     try {
       let key = localStorage.getItem('apiKey');
-      await getReset({ key });
+      const response = await getReset({key});
+      // @ts-ignore
+      const message = response?.message ?? '';
+      if (message === "Index reset successfully") {
+        alert(
+            t('Context reset successfully'),
+        );
+      } else {
+        console.log(`Chatbar: unexpected response: ${response}`);
+        alert(
+            t('Unexpected error resetting context'),
+        );
+      }
     } catch (error) {
       console.error('Error:', error);
     }

@@ -14,6 +14,7 @@ import ChatbarContext from '../Chatbar.context';
 import { ResetContext } from "./ResetContext";
 import { ClearConversations } from './ClearConversations';
 import { PluginKeys } from './PluginKeys';
+import { RAG_ENABLED } from "@/utils/app/const";
 
 export const ChatbarSettings = () => {
   const { t } = useTranslation('sidebar');
@@ -40,7 +41,9 @@ export const ChatbarSettings = () => {
 
   return (
     <div className="flex flex-col items-center space-y-1 border-t border-white/20 pt-1 text-sm">
-      <ResetContext onResetContext={handleResetContext} />
+      {RAG_ENABLED ? (
+          <ResetContext onResetContext={handleResetContext} />
+      ) : null }
 
       {conversations.length > 0 ? (
         <ClearConversations onClearConversations={handleClearConversations} />

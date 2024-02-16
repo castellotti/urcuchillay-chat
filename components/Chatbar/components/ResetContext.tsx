@@ -49,7 +49,7 @@ export const ResetContext: FC<Props> = ({ onResetContext }) => {
         </div>
     ) : (
         <SidebarButton
-            text={t('Reset Context')}
+            text={t('Reset RAG Context')}
             icon={<IconReload size={18} />}
             onClick={() => setIsConfirming(true)}
         />

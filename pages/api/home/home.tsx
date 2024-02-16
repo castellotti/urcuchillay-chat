@@ -15,7 +15,7 @@ import {
   cleanConversationHistory,
   cleanSelectedConversation,
 } from '@/utils/app/clean';
-import { DEFAULT_SYSTEM_PROMPT, DEFAULT_TEMPERATURE } from '@/utils/app/const';
+import { DEFAULT_SYSTEM_PROMPT, DEFAULT_TEMPERATURE, PROMPT_BAR_ENABLED } from '@/utils/app/const';
 import {
   saveConversation,
   saveConversations,
@@ -286,7 +286,12 @@ const Home = ({
       dispatch({ field: 'showChatbar', value: showChatbar === 'true' });
     }
 
-    const showPromptbar = localStorage.getItem('showPromptbar');
+    let showPromptbar = localStorage.getItem('showPromptbar');
+    if (PROMPT_BAR_ENABLED && showPromptbar === 'true') {
+      showPromptbar = 'true';
+    } else if (!PROMPT_BAR_ENABLED || showPromptbar !== 'true') {
+      showPromptbar = 'false';
+    }
     if (showPromptbar) {
       dispatch({ field: 'showPromptbar', value: showPromptbar === 'true' });
     }

@@ -29,3 +29,9 @@ export const OPENAI_API_VERSION =
 
 export const OPENAI_ORGANIZATION =
   process.env.OPENAI_ORGANIZATION || '';
+
+export const RAG_ENABLED =
+  (process.env.RAG_ENABLED || '').toLowerCase() !== 'false';
+
+export const PROMPT_BAR_ENABLED =
+  (process.env.PROMPT_BAR || '').toLowerCase() !== 'false';

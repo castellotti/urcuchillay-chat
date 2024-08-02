@@ -8,6 +8,7 @@ export interface OpenAIModel {
 }
 
 export enum OpenAIModelID {
+  DEFAULT = 'default',
   GPT_3_5_16K = 'gpt-35-turbo-16k',
   GPT_3_5_AZ = 'gpt-35-turbo',
   GPT_3_5 = 'gpt-3.5-turbo',
@@ -16,15 +17,24 @@ export enum OpenAIModelID {
   LLAMA_2_7B = 'llama-2-7b-chat',
   LLAMA_2_13B = 'llama-2-13b-chat',
   LLAMA_2_70B = 'llama-2-70b-chat',
+  LLAMA_3_1_8B = 'Meta-Llama-3.1-8B-Instruct',
+  LLAMA_3_1_70B = 'Meta-Llama-3.1-70B-Instruct',
+  LLAMA_3_1_405B = 'Meta-Llama-3.1-405B-Instruct',
   MISTRAL_7B = 'mistral-7b-instruct',
   MIXTRAL_8X7B = 'mixtral-8x7b-instruct',
   PHI_2 = 'phi-2',
 }
 
 // in case the `DEFAULT_MODEL` environment variable is not set or set to an unsupported model
-export const fallbackModelID = OpenAIModelID.MISTRAL_7B;
+export const fallbackModelID = OpenAIModelID.DEFAULT;
 
 export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
+  [OpenAIModelID.DEFAULT]: {
+    id: OpenAIModelID.DEFAULT,
+    name: 'Default',
+    maxLength: 24000,
+    tokenLimit: 8000,
+  },
   [OpenAIModelID.GPT_3_5]: {
     id: OpenAIModelID.GPT_3_5,
     name: 'GPT-3.5 Turbo',
@@ -72,6 +82,24 @@ export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
     name: 'Llama 2 70B',
     maxLength: 12000,
     tokenLimit: 4000,
+  },
+  [OpenAIModelID.LLAMA_3_1_8B]: {
+    id: OpenAIModelID.LLAMA_3_1_8B,
+    name: 'Llama 3.1 8B',
+    maxLength: 131072,
+    tokenLimit: 102400,
+  },
+  [OpenAIModelID.LLAMA_3_1_70B]: {
+    id: OpenAIModelID.LLAMA_3_1_70B,
+    name: 'Llama 3.1 70B',
+    maxLength: 131072,
+    tokenLimit: 102400,
+  },
+  [OpenAIModelID.LLAMA_3_1_405B]: {
+    id: OpenAIModelID.LLAMA_3_1_405B,
+    name: 'Llama 3.1 405B',
+    maxLength: 131072,
+    tokenLimit: 102400,
   },
   [OpenAIModelID.MISTRAL_7B]: {
     id: OpenAIModelID.MISTRAL_7B,

@@ -10,7 +10,7 @@ export const CONTEXT_ONLY_PROMPT =
     "2. Avoid statements like 'Based on the context, ...' or 'The context information ...' or anything along those lines.";
 
 export const API_HOST =
-  process.env.API_HOST || 'https://api.openai.com';
+  process.env.API_HOST || 'http://127.0.0.1:8080';
 
 export const AZURE_DEPLOYMENT_ID =
     process.env.AZURE_DEPLOYMENT_ID || '';

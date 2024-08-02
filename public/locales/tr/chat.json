@@ -23,6 +23,6 @@
   "click if using a .env.local file": "Eğer .env.local dosyası kullanıyorsanız tıklayın",
   "Message limit is {{maxLength}} characters. You have entered {{valueLength}} characters.": "Mesaj sınırı {{maxLength}} karakterdir. {{valueLength}} karakter girdiniz.",
   "Please enter a message": "Lütfen bir mesaj girin",
-  "Urcuchillay Chat is a web-based chat interface in the style of OpenAI's ChatGPT based on Chatbot UI.": "Urcuchillay Chat, ChatGPT'nin arayüz ve işlevselliğini taklit etmeyi amaçlayan OpenAI'in sohbet modelleri için gelişmiş bir sohbetbot kitidir.",
+  "Urcuchillay Chat is a web-based chat interface in the style of OpenAI's ChatGPT.": "Urcuchillay Chat, ChatGPT'nin arayüz ve işlevselliğini taklit etmeyi amaçlayan OpenAI'in sohbet modelleri için gelişmiş bir sohbetbot kitidir.",
   "Are you sure you want to clear all messages?": "Tüm mesajları temizlemek istediğinize emin misiniz?"
 }
